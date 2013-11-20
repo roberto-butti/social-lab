@@ -1,4 +1,8 @@
 {
+	"name": "Social Lab",
+	"description": "Social Lab.",
+	"keywords": ["socialapp", "laravel"],
+	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.0.*"
 	},
@@ -12,5 +16,20 @@
 			"app/tests/TestCase.php"
 		]
 	},
-	"minimum-stability": "dev"
+	"scripts": {
+		"post-install-cmd": [
+			"php artisan optimize"
+		],
+		"post-update-cmd": [
+			"php artisan clear-compiled",
+			"php artisan optimize"
+		],
+		"post-create-project-cmd": [
+			"php artisan key:generate"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable"
 }

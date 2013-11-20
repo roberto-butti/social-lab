@@ -8,15 +8,15 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| This option controls the default session "driver" that will be used on
-	| requests. By default we will use the light-weight cookie driver but
+	| requests. By default, we will use the lightweight native driver but
 	| you may specify any of the other wonderful drivers provided here.
 	|
-	| Supported: "cookie", file", "database", "apc",
+	| Supported: "native", "cookie", "database", "apc",
 	|            "memcached", "redis", "array"
 	|
 	*/
 
-	'driver' => 'cookie',
+	'driver' => 'native',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -24,7 +24,7 @@ return array(
 	|--------------------------------------------------------------------------
 	|
 	| Here you may specify the number of minutes that you wish the session
-	| to be allowed to remain idle for it is expired. If you want them
+	| to be allowed to remain idle before it expires. If you want them
 	| to immediately expire when the browser closes, set it to zero.
 	|
 	*/
@@ -36,13 +36,13 @@ return array(
 	| Session File Location
 	|--------------------------------------------------------------------------
 	|
-	| When using the "file" session driver, we need a location where session
+	| When using the native session driver, we need a location where session
 	| files may be stored. A default has been set for you but a different
 	| location may be specified. This is only needed for file sessions.
 	|
 	*/
 
-	'path' => __DIR__.'/../storage/sessions',
+	'files' => storage_path().'/sessions',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -95,5 +95,31 @@ return array(
 	*/
 
 	'cookie' => 'laravel_session',
+
+	/*
+	|--------------------------------------------------------------------------
+	| Session Cookie Path
+	|--------------------------------------------------------------------------
+	|
+	| The session cookie path determines the path for which the cookie will
+	| be regarded as available. Typically, this will be the root path of
+	| your application but you are free to change this when necessary.
+	|
+	*/
+
+	'path' => '/',
+
+	/*
+	|--------------------------------------------------------------------------
+	| Session Cookie Domain
+	|--------------------------------------------------------------------------
+	|
+	| Here you may change the domain of the cookie used to identify a session
+	| in your application. This will determine which domains the cookie is
+	| available to in your application. A sensible default has been set.
+	|
+	*/
+
+	'domain' => null,
 
 );
