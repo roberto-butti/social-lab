@@ -4,7 +4,8 @@
 	"keywords": ["socialapp", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.0.*"
+		"laravel/framework": "4.0.*",
+		"facebook/php-sdk": "3.2.*"
 	},
 	"autoload": {
 		"classmap": [
